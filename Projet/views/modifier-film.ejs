@@ -1,0 +1,47 @@
+<%- include('./partials/header.ejs') %>
+
+<div class="container">
+  <h1>Modifier le film</h1>
+  <form action="/films/<%= movie._id %>/modifier" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+
+    <label for="title">Titre :</label>
+    <input type="text" id="title" name="Series_Title" value="<%= movie.Series_Title %>" required>
+
+    <label for="overview">Overview :</label>
+    <textarea id="overview" name="Overview" required><%= movie.Overview %></textarea>
+
+    <label for="released-year">Released Year :</label>
+    <input type="text" id="released-year" name="Released_Year" value="<%= movie.Released_Year %>" required>
+
+    <label for="runtime">Runtime :</label>
+    <input type="text" id="runtime" name="Runtime" value="<%= movie.Runtime %>" required>
+
+    <label for="genre">Genre :</label>
+    <input type="text" id="genre" name="Genre" value="<%= movie.Genre %>" required>
+
+    <label for="director">Director :</label>
+    <input type="text" id="director" name="Director" value="<%= movie.Director %>" required>
+
+    <label for="imdb-rating">IMDB Rating :</label>
+    <input type="text" id="imdb-rating" name="IMDB_Rating" value="<%= movie.IMDB_Rating %>" required>
+
+    <label for="star1">Star1 :</label>
+    <input type="text" id="star1" name="Star1" value="<%= movie.Star1 %>" required>
+
+    <label for="star2">Star2 :</label>
+    <input type="text" id="star2" name="Star2" value="<%= movie.Star2 %>" required>
+
+    <label for="star3">Star3 :</label>
+    <input type="text" id="star3" name="Star3" value="<%= movie.Star3 %>" required>
+
+    <label for="star4">Star4 :</label>
+    <input type="text" id="star4" name="Star4" value="<%= movie.Star4 %>" required>
+
+    <button type="submit">Modifier</button>
+  </form>
+</div>
+
+<%- include('./partials/footer.ejs') %>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
