@@ -6,6 +6,8 @@
   
   h1 {
     margin-bottom: 20px;
+    color: white;
+    text-align: center;
   }
   
   form {
@@ -16,13 +18,16 @@
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
+    color: white;
   }
   
   input[type="text"] {
+    border-radius: 5px;
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
   }
+  
   
   button[type="submit"] {
     padding: 10px 20px;
@@ -30,9 +35,11 @@
     color: #fff;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
+    color: black;
   }
   
   button[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: white;
   }
   

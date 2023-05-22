@@ -15,7 +15,6 @@
     <p><strong>Star3:</strong> <%= movie.Star3 %></p>
     <p><strong>Star4:</strong> <%= movie.Star4 %></p>
     <form id="delete-movie-form" action="/films/<%= movie._id %>?_method=DELETE" method="POST">
-        <!-- Utilisez la méthode POST et ajoutez ?_method=DELETE dans l'action -->
         <button type="submit" class="delete-button">Supprimer le film</button>
     </form>
     <a href="/films/<%= movie._id %>/modifier" class="edit-button">Modifier le film</a>
@@ -32,7 +31,7 @@
   deleteButton.addEventListener('click', () => {
     axios.delete(`/films/<%= movie._id %>`)
       .then(response => {
-        window.location.href = '/'; // Redirige vers la page d'accueil après la suppression du film
+        window.location.href = '/';
       })
       .catch(error => {
         console.error(error);
