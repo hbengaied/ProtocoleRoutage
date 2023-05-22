@@ -1,0 +1,20 @@
+<%- include('./partials/header.ejs') %>
+
+<div class="container">
+  <div class="movie-details">
+      <img src="<%= movie.Poster_Link %>" alt="<%= movie.Series_Title %>">
+      <h1><%= movie.Series_Title %></h1>
+    <p><strong>Overview:</strong> <%= movie.Overview %></p>
+    <p><strong>Released Year:</strong> <%= movie.Released_Year %></p>
+    <p><strong>Runtime:</strong> <%= movie.Runtime %></p>
+    <p><strong>Genre:</strong> <%= movie.Genre %></p>
+    <p><strong>Director:</strong> <%= movie.Director %></p>
+    <p><strong>IMDB Rating:</strong> <%= movie.IMDB_Rating %></p>
+    <p><strong>Star1:</strong> <%= movie.Star1 %></p>
+    <p><strong>Star2:</strong> <%= movie.Star2 %></p>
+    <p><strong>Star3:</strong> <%= movie.Star3 %></p>
+    <p><strong>Star4:</strong> <%= movie.Star4 %></p>
+  </div>
+</div>
+
+<%- include('./partials/footer.ejs') %>

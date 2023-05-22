@@ -1,12 +1,15 @@
 <%- include('./partials/header.ejs') %>
     <h1>Notes des films</h1>
     <div class="movie-list">
-        <% movies.forEach(movie => { %>
-          <div class="movie">
+      <% movies.forEach(movie => { %>
+        <div class="movie">
+          <a href="/film/<%= movie._id %>">
             <img src="<%= movie.Poster_Link %>" alt="Poster">
             <h2><%= movie.Series_Title %></h2>
-          </div>
-        <% }) %>
-      </div>
+          </a>
+        </div>
+      <% }) %>
+    </div>
+    
       
 <%- include('./partials/footer.ejs') %>

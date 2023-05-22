@@ -21,6 +21,28 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/film/:id", async (req, res) => {
+  try {
+    const movie = await Movie.findById(req.params.id);
+    if (!movie) {
+      return res.status(404).send("Film non trouvé");
+    }
+    
+    const templateData = {
+      title: "Détails du film",
+      styles: ["detail-film.css"],
+      movie: movie,
+    };
+
+    res.status(200).render("detail-film", templateData);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Une erreur est survenue");
+  }
+});
+
+
+
 
 router.get("/ajouter", (req,res) => {
     res.status(200).render("ajouter-film", {title : "Ajouter un film"})
