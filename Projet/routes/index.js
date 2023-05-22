@@ -90,13 +90,38 @@ router.post('/films/:id/modifier', async (req, res) => {
   }
 });
 
+router.get("/ajouter", async (req, res) => {
+  try {
+    const templateData = {
+      title: "Ajouter un film",
+      styles: ["ajouter-film.css"],
+    };
 
+    res.status(200).render("ajouter-film", templateData);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Erreur serveur");
+  }
+});
 
+router.post("/ajouter", async (req, res) => {
+  try {
+    // Récupérez les données du formulaire soumis depuis req.body
+    const formData = req.body;
 
+    // Créez une nouvelle instance du modèle de film avec les données du formulaire
+    const newMovie = new Movie(formData);
 
+    // Enregistrez le nouveau film dans la base de données
+    const savedMovie = await newMovie.save();
 
-router.get("/ajouter", (req,res) => {
-    res.status(200).render("ajouter-film", {title : "Ajouter un film"})
-})
+    // Redirigez l'utilisateur vers la page de détails du film nouvellement ajouté
+    res.redirect(`/film/${savedMovie._id}`);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Une erreur est survenue lors de l'ajout du film");
+  }
+});
+
 
 export default router

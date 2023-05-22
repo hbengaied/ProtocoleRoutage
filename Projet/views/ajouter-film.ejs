@@ -1,4 +1,46 @@
 <%- include('./partials/header.ejs') %>
-<body>
-    <h1>Ajouter un film</h1>
+
+<div class="container">
+  <h1>Ajouter un film</h1>
+  <form action="/ajouter" method="POST">
+    <label for="title">Titre :</label>
+    <input type="text" id="title" name="Series_Title" required>
+
+    <label for="poster-link">Poster Link :</label>
+    <input type="text" id="poster-link" name="Poster_Link">
+
+    <label for="overview">Overview :</label>
+    <textarea id="overview" name="Overview" required></textarea>
+
+    <label for="released-year">Released Year :</label>
+    <input type="text" id="released-year" name="Released_Year" required>
+
+    <label for="runtime">Runtime :</label>
+    <input type="text" id="runtime" name="Runtime" required>
+
+    <label for="genre">Genre :</label>
+    <input type="text" id="genre" name="Genre" required>
+
+    <label for="director">Director :</label>
+    <input type="text" id="director" name="Director" required>
+
+    <label for="imdb-rating">IMDB Rating :</label>
+    <input type="text" id="imdb-rating" name="IMDB_Rating" required>
+
+    <label for="star1">Star1 :</label>
+    <input type="text" id="star1" name="Star1">
+
+    <label for="star2">Star2 :</label>
+    <input type="text" id="star2" name="Star2">
+
+    <label for="star3">Star3 :</label>
+    <input type="text" id="star3" name="Star3">
+
+    <label for="star4">Star4 :</label>
+    <input type="text" id="star4" name="Star4">
+
+    <button type="submit">Ajouter</button>
+  </form>
+</div>
+
 <%- include('./partials/footer.ejs') %>

@@ -8,6 +8,9 @@
     <label for="title">Titre :</label>
     <input type="text" id="title" name="Series_Title" value="<%= movie.Series_Title %>" required>
 
+    <label for="poster_link">Poster Link :</label>
+    <input type="text" id="title" name="Poster_Link" value="<%= movie.Poster_Link %>">
+
     <label for="overview">Overview :</label>
     <textarea id="overview" name="Overview" required><%= movie.Overview %></textarea>
 
@@ -27,16 +30,16 @@
     <input type="text" id="imdb-rating" name="IMDB_Rating" value="<%= movie.IMDB_Rating %>" required>
 
     <label for="star1">Star1 :</label>
-    <input type="text" id="star1" name="Star1" value="<%= movie.Star1 %>" required>
+    <input type="text" id="star1" name="Star1" value="<%= movie.Star1 %>">
 
     <label for="star2">Star2 :</label>
-    <input type="text" id="star2" name="Star2" value="<%= movie.Star2 %>" required>
+    <input type="text" id="star2" name="Star2" value="<%= movie.Star2 %>">
 
     <label for="star3">Star3 :</label>
-    <input type="text" id="star3" name="Star3" value="<%= movie.Star3 %>" required>
+    <input type="text" id="star3" name="Star3" value="<%= movie.Star3 %>">
 
     <label for="star4">Star4 :</label>
-    <input type="text" id="star4" name="Star4" value="<%= movie.Star4 %>" required>
+    <input type="text" id="star4" name="Star4" value="<%= movie.Star4 %>">
 
     <button type="submit">Modifier</button>
   </form>
