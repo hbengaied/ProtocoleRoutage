@@ -4,16 +4,16 @@ import Movie from "../models/Movies.js";
 
 const router = Router();
 
-router.use(express.urlencoded({ extended: true })); // Utilisez express.urlencoded pour l'analyse du corps de la requête
+router.use(express.urlencoded({ extended: true })); // express.urlencoded pour l'analyse du corps de la requête
 
 router.get("/", async (req, res) => {
   try {
-    const movies = await Movie.find(); // Récupère tous les films depuis la base de données
+    const movies = await Movie.find(); // recup tous les films depuis la base de données
 
     const templateData = {
       title: "Page d'accueil",
       styles: ["acceuil.css"],
-      movies: movies, // Passe les films à la vue
+      movies: movies, // passer les films à la vue
     };
 
     res.status(200).render("acceuil", templateData);
@@ -106,16 +106,16 @@ router.get("/ajouter", async (req, res) => {
 
 router.post("/ajouter", async (req, res) => {
   try {
-    // Récupérez les données du formulaire soumis depuis req.body
+    // recup les données du formulaire soumis depuis req.body
     const formData = req.body;
 
-    // Créez une nouvelle instance du modèle de film avec les données du formulaire
+    // cree une nouvelle instance du modele de film avec les données du formulaire
     const newMovie = new Movie(formData);
 
-    // Enregistrez le nouveau film dans la base de données
+    // enregistre le nouveau film dans la base de données
     const savedMovie = await newMovie.save();
 
-    // Redirigez l'utilisateur vers la page de détails du film nouvellement ajouté
+    // redirige l'utilisateur vers la page de détails du film nouvellement ajouté
     res.redirect(`/film/${savedMovie._id}`);
   } catch (error) {
     console.error(error);
